@@ -204,7 +204,9 @@ namespace BlazorWebFormsComponents
 				HandleUnknownAttributes();
 				StateHasChanged();
 
-				JsRuntime.InvokeVoidAsync(JsScripts.Page.OnAfterRender, new object[] { });
+				var Page = await JsRuntime.InvokeAsync<IJSObjectReference>("import", JsScripts.Page.ScriptURI);
+
+				await Page.InvokeVoidAsync(JsScripts.Page.OnAfterRender);
 
 			}
 

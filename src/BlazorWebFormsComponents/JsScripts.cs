@@ -7,19 +7,20 @@
 	/// </summary>
 	internal static class JsScripts
 	{
-
 		/// <summary>
 		/// Scripts that run in the Page JavaScript object
 		/// </summary>
 		internal static class Page
 		{
-
-			private const string _Base = "bwfc.Page.";
+			/// <summary>
+			/// Reference to JS file that contains the Page scripts
+			/// </summary>
+			public const string ScriptURI = "./_content/Fritz.BlazorWebFormsComponents/js/Basepage.js";
 
 			/// <summary>
 			/// Script to be run after the page is rendered
 			/// </summary>
-			public static readonly string OnAfterRender = string.Concat(_Base, "OnAfterRender");
+			public static readonly string OnAfterRender = "OnAfterRender";
 
 		}
 
